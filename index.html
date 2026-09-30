@@ -472,7 +472,15 @@
             <!-- <div class="slider-container"></div> -->
 <section id="slider">
 
-    <div id="booking-slider">
+    <div class="slider-frame booking-slider-frame">
+        <span class="slider-arrow slider-arrow-left" aria-hidden="true">
+            <i class="fa-solid fa-chevron-left"></i>
+        </span>
+        <span class="slider-arrow slider-arrow-right" aria-hidden="true">
+            <i class="fa-solid fa-chevron-right"></i>
+        </span>
+
+        <div id="booking-slider">
 
         <div class="slider-container">
 
@@ -490,10 +498,8 @@
                         Fares statring at INR 3999/-
                     </p>
 
-                    <h5>Valid Till Date: 17 Oct 2026</h5>
-
                     <div>
-                        <span>Ends Today</span>
+                        <span>Valid Till: 17 Oct 2026</span>
                         <span>
                             BOOK NOW
                             <i class="fa-solid fa-arrow-right"></i>
@@ -510,20 +516,16 @@
 
 
                 <div class="slider-img" id="slides-2">
-
                     <h3>Greatest Hotels deal <br>By</h3>
                     <h2>India Check-In sales</h2>
                     <h3>EMTSALE</h3>
-
                 </div>
 
                 <div class="slides-content">
                     <p>Unlock Up to 70% off*,INR500* cashback,Meal upgrades,Exclusive Deals&More</p>
 
-                    <h6>Valid Till Date: 20 Oct 2026</h6>
-
                     <div>
-                        <span>Ends Soon</span>
+                        <span>Valid Till: 20 Oct 2026</span>
                         <span>
                             BOOK NOW
                             <i class="fa-solid fa-arrow-right"></i>
@@ -537,19 +539,16 @@
             <div class="offer-slides">
 
                 <div class="slider-img" id="slides-3">
-
-                <h3>Great connection sales <br>By</h3>
-                <h2>IndiGo Airlines</h2>
-                <h3>starting at INR 3999/-</h3>
+                    <h3>Great connection sales <br>By</h3>
+                    <h2>IndiGo Airlines</h2>
+                    <h3>starting at INR 3999/-</h3>
                 </div>
 
                 <div class="slides-content">
                     <p>Grab Up to 35% OFF* on Flights to All Malaysia Airlines Destinations
                     </p>
-                    <h6>Valid Till Date: 25 Oct 2026</h6>
-
                     <div>
-                        <span>Limited Offer</span>
+                        <span>Valid Till: 25 Oct 2026</span>
                         <span>
                             BOOK NOW
                             <i class="fa-solid fa-arrow-right"></i>
@@ -570,10 +569,9 @@
 
                 <div class="slides-content">
                     <p>Special offer on bus booking</p>
-                    <p>Valid Till Date: 28 Oct 2026</p>
 
                     <div>
-                        <span>Ends Soon</span>
+                        <span>Valid Till: 28 Oct 2026</span>
                         <span>
                             BOOK NOW
                             <i class="fa-solid fa-arrow-right"></i>
@@ -594,10 +592,9 @@
 
                 <div class="slides-content">
                     <p>Holiday packages at special prices</p>
-                    <p>Valid Till Date: 30 Oct 2026</p>
 
                     <div>
-                        <span>Limited Offer</span>
+                        <span>Valid Till: 30 Oct 2026</span>
                         <span>
                             BOOK NOW
                             <i class="fa-solid fa-arrow-right"></i>
@@ -618,10 +615,9 @@
 
                 <div class="slides-content">
                     <p>Special cab booking offer</p>
-                    <p>Valid Till Date: 31 Oct 2026</p>
 
                     <div>
-                        <span>Ends Today</span>
+                        <span>Valid Till: 31 Oct 2026</span>
                         <span>
                             BOOK NOW
                             <i class="fa-solid fa-arrow-right"></i>
@@ -633,21 +629,28 @@
 
         </div>
 
-    </div>
-
-<div id="offers-slider-section">
-    <div id="scroller-slides-container">
-        <div class="offer-scroller">
-            <!-- <i class="fa-solid fa-less-than"></i> -->
-            <img src="./assests/scroller/scroller-1.png" alt="scroller">
-            <!-- <i class="fa-solid fa-greater-than"></i> -->
-
-        </div>
-        <div class="offer-scroller">
-            <img src="./assests/scroller/scroller-2.png" alt="scroller">
         </div>
     </div>
-</div>
+
+    <div class="slider-frame offer-slider-frame">
+        <span class="slider-arrow slider-arrow-left" aria-hidden="true">
+            <i class="fa-solid fa-chevron-left"></i>
+        </span>
+        <span class="slider-arrow slider-arrow-right" aria-hidden="true">
+            <i class="fa-solid fa-chevron-right"></i>
+        </span>
+
+        <div id="offers-slider-section">
+            <div id="scroller-slides-container">
+                <div class="offer-scroller">
+                    <img src="./assests/scroller/scroller-1.png" alt="scroller">
+                </div>
+                <div class="offer-scroller">
+                    <img src="./assests/scroller/scroller-2.png" alt="scroller">
+                </div>
+            </div>
+        </div>
+    </div>
 
 </section>
 <section class="flight-routes">
@@ -1146,7 +1149,7 @@ Trending Tourist Destinations
 <div id="donate-text">
     <h1>EaseMyTrip Foundation<br>
      Keeping India’s <span>Heritage Alive</span></h1>
-       <button id="btn-donate" type="button">Donate Now🤍
+    <button id="btn-donate" type="button">Donate Now <i class="fa-solid fa-heart"></i>
        </button>
 </div>
 </section>
@@ -1232,6 +1235,7 @@ Trending Tourist Destinations
         </div>
     </footer>
 
+    <img id="sticky-offer" src="./assests/offer-slider/sticky.png" alt="Special offer">
 
 
 </body>

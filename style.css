@@ -11,6 +11,23 @@ body {
     color: #333;
 }
 
+#sticky-offer {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    width: 112px;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    #sticky-offer {
+        left: 12px;
+        bottom: 12px;
+        width: 88px;
+    }
+}
+
 header {
     width: 100%;
     background-color: #fff;
@@ -406,13 +423,50 @@ main li {
     height: 80vh;
 }
 
+.slider-frame {
+    position: relative;
+    width: 100%;
+}
+
+.booking-slider-frame {
+    height: 340px;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+    color: #1675c1;
+    background-color: #fff;
+    border: 1px solid #e1e5e9;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    font-size: 15px;
+    pointer-events: none;
+}
+
+.slider-arrow-left {
+    left: 12px;
+}
+
+.slider-arrow-right {
+    right: 12px;
+}
+
 #booking-slider {
     width: 100%;
-    height: 70%;
+    height: 100%;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     background-color: rgb(254, 255, 255);
     overflow-x: auto;
+    overflow-y: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -420,64 +474,157 @@ main li {
 }
 
 .slider-container {
-    height: 80%;
-    width: 2400px;
+    height: 320px;
+    width: max-content;
     display: flex;
-    gap: 11px;
+    gap: 15px;
 }
 
 .offer-slides {
-    width: 400px;
-    height: 100%;
+    flex: 0 0 465px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
     background-color: white;
-    border-radius: 8px;
+    border: 1px solid #e2e2e2;
+    border-radius: 18px;
     overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .slider-img {
-    height: 60%;
+    flex: 0 0 203px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 28px;
     color: white;
+    text-align: left;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.85);
+    background-position: center;
+    background-size: cover;
+}
+
+.slider-img h2 {
+    margin: 3px 0;
+    font-size: 25px;
+    line-height: 1.2;
+}
+
+.slider-img h3 {
+    font-size: 16px;
+    line-height: 1.3;
 }
 
 #slides-1 {
     background-image: url(./assests/offer-slider/slides-1.png);
-    background-size: cover;
 }
 
 #slides-2 {
     background-image: url(./assests/offer-slider/slides-2.png);
-    background-size: cover;
 }
 
 #slides-3 {
     background-image: url(./assests/offer-slider/slides-3.png);
-    background-size: cover;
 }
 
 #slides-4 {
     background-image: url(./assests/offer-slider/slides-4.png);
-    background-size: cover;
 }
 
 #slides-5 {
     background-image: url(./assests/offer-slider/slides-5.png);
-    background-size: cover;
 }
 
 #slides-6 {
     background-image: url(./assests/offer-slider/slides-6.png);
-    background-size: cover;
 }
 
 .slides-content {
-    height: 40%;
+    flex: 1;
     width: 100%;
-    padding: 15px;
+    min-height: 0;
+    padding: 14px 24px 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.slides-content p {
+    color: #171717;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.slides-content > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.slides-content > div span:first-child {
+    color: #687386;
+    font-size: 16px;
+}
+
+.slides-content > div span:last-child {
+    color: #111;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.slides-content > div i {
+    margin-left: 5px;
+}
+
+@media (max-width: 600px) {
+    .slider-arrow {
+        width: 34px;
+        height: 34px;
+        font-size: 13px;
+    }
+
+    .slider-arrow-left {
+        left: 8px;
+    }
+
+    .slider-arrow-right {
+        right: 8px;
+    }
+
+    .slider-img {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .offer-slides {
+        flex-basis: min(465px, calc(100vw - 100px));
+    }
+
+    .slides-content {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .slides-content p {
+        font-size: 16px;
+    }
+
+    .slides-content > div span:first-child {
+        font-size: 13px;
+    }
+
+    .slides-content > div span:last-child {
+        font-size: 14px;
+    }
 }
 
 #offers-slider-section {
-    height: 40%;
+    height: 100%;
     width: 100%;
     overflow: auto;
     border-radius: 21px;
@@ -660,6 +807,12 @@ flex-direction: column; */
 
 .tour-card p {
     font-size: small;
+    color: wheat;
+    font-weight: bolder;
+}
+.tour-card h3{
+    color: white;
+    font-size:large;
 }
 
 #Andman {
@@ -1216,48 +1369,89 @@ benefit-box:last-child {
 }
 
 #donate {
-    width: 100%;
-    height: 50vh;
+    width: calc(100% + 90px);
+    height: 500px;
+    margin-left: -45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url(./assests/footer/donate.png);
     background-repeat: no-repeat;
-    object-fit: contain;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: end;
-
+    background-position: center;
+    background-size: cover;
 }
 
 #donate-text {
-    height: 50%;
-    margin-right: 20%;
+    width: 50%;
+    margin-left: 48%;
+    margin-right: 2%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center
+    align-items: flex-start;
 }
 
 #donate-text span {
-    color: rgb(162, 91, 65);
+    padding: 0 6px;
+    color: #884018;
+    background-color: #fff3d1;
 }
 
 #donate-text h1 {
+    margin-bottom: 24px;
     font-weight: bold;
     color: #080808;
+    font-size: 42px;
+    line-height: 1.2;
 
 }
 
 #btn-donate {
     color: white;
     background-color: #ef5824;
-    font-size: large;
+    font-size: 22px;
     font-weight: bold;
-    border-radius: 21px;
-    padding: 10px 21px;
+    border-radius: 999px;
+    padding: 16px 36px;
     border: none;
     cursor: pointer;
 
 }
+
+/* @media (max-width: 600px) {
+    #donate {
+        width: calc(100% + 90px);
+        height: 480px;
+        margin-left: -45px;
+        background-position: right center;
+    }
+
+    #donate-text {
+        width: auto;
+        margin: 0 20px;
+    }
+
+    #donate-text h1 {
+        font-size: 30px;
+    }
+
+    #btn-donate {
+        font-size: 18px;
+        padding: 13px 26px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1100px) {
+    #donate-text {
+        width: 52%;
+        margin-left: 46%;
+        margin-right: 2%;
+    }
+
+    #donate-text h1 {
+        font-size: 32px;
+    }
+} */
 footer {
     height: 100vh;
     width: 100%;
@@ -1377,4 +1571,16 @@ footer {
 
 #footer-bottom img {
     width: 50%;
+}
+
+.offer-slider-frame {
+    height: 40%;
+}
+
+.offer-slider-frame .slider-arrow {
+    top: 30%;
+}
+
+#btn-donate i {
+    margin-left: 8px;
 }
